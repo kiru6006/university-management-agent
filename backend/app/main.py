@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.app.core.config import settings
-from backend.app.api.v1 import auth, admission, chat_ws, academic, exams, results, grievance
+from backend.app.api.v1 import (
+    auth, admission, chat_ws, academic, exams, results, grievance,
+    finance, placement, scholarship, research
+)
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -18,13 +21,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Ingest API v1 routers
+# Ingest all API v1 routers
 app.include_router(auth.router, prefix=settings.API_V1_STR)
 app.include_router(admission.router, prefix=settings.API_V1_STR)
 app.include_router(academic.router, prefix=settings.API_V1_STR)
 app.include_router(exams.router, prefix=settings.API_V1_STR)
 app.include_router(results.router, prefix=settings.API_V1_STR)
 app.include_router(grievance.router, prefix=settings.API_V1_STR)
+app.include_router(finance.router, prefix=settings.API_V1_STR)
+app.include_router(placement.router, prefix=settings.API_V1_STR)
+app.include_router(scholarship.router, prefix=settings.API_V1_STR)
+app.include_router(research.router, prefix=settings.API_V1_STR)
 app.include_router(chat_ws.router)
 
 @app.get("/api/v1/health", tags=["Health"])
@@ -34,7 +41,7 @@ async def health_check():
         "service": settings.PROJECT_NAME,
         "environment": settings.ENVIRONMENT,
         "pii_sanitizer": "active",
-        "phase": "Phase 2 Complete (Academic Core & Grievances)"
+        "phase": "Phase 3 Complete (Finance, TPO, Scholarships & R&D)"
     }
 
 if __name__ == "__main__":
