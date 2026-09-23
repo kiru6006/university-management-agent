@@ -9,6 +9,20 @@
 
 ---
 
+## 📸 Platform Screenshots Preview
+
+| Executive Operations Dashboard | Unified Request Inbox |
+| :---: | :---: |
+| ![Dashboard](docs/screenshots/01-dashboard.png) | ![Unified Inbox](docs/screenshots/02-unified-inbox.png) |
+
+| Live AI Request Classifier | Case Audit & HITL Resolution |
+| :---: | :---: |
+| ![Submit Request](docs/screenshots/03-submit-request.png) | ![Case Detail](docs/screenshots/04-case-detail.png) |
+
+*👉 View the full screenshot gallery in [docs/07-visual-walkthrough.md](docs/07-visual-walkthrough.md).*
+
+---
+
 ## ⚡ Quick Start (Local Run)
 
 The application runs locally with zero backend configuration needed for the prototype.
@@ -89,19 +103,15 @@ The classifier evaluates semantic keywords and urgency indicators:
 
 ---
 
-## 🛠️ Tech Stack & Design System
+## 🛠️ Architecture Documentation & Specifications
 
-- **Framework:** React 19 + TypeScript + Vite 6
-- **Styling:** Tailwind CSS (Curated Navy & Blue enterprise palette)
-- **Icons:** Lucide React
-- **State & Persistence:** React Context + HTML5 LocalStorage
-- **Architecture Documentation:** 
-  - [project-requirement.md](project-requirement.md)
-  - [high-level-design.md](high-level-design.md)
-  - [low-level-design.md](low-level-design.md)
-  - [docs/01-role-charters.md](docs/01-role-charters.md)
-  - [docs/02-agent-specifications.md](docs/02-agent-specifications.md)
-  - [docs/03-prompt-playbook.md](docs/03-prompt-playbook.md)
-  - [docs/04-roadmap-90days.md](docs/04-roadmap-90days.md)
-  - [docs/05-governance-framework.md](docs/05-governance-framework.md)
-  - [docs/06-deployment-guide.md](docs/06-deployment-guide.md)
+- [Project Business Requirements (SRS)](project-requirement.md)
+- [High-Level Design (HLD) & C4 Blueprint](high-level-design.md)
+- [Low-Level Design (LLD) & Data Models](low-level-design.md)
+- [Role Charters & Governance Model](docs/01-role-charters.md)
+- [Agent Specifications Catalog](docs/02-agent-specifications.md)
+- [Prompt Engineering Playbook](docs/03-prompt-playbook.md)
+- [90-Day Implementation Roadmap](docs/04-roadmap-90days.md)
+- [Statutory Governance & DPDP Compliance](docs/05-governance-framework.md)
+- [Deployment & Observability Guide](docs/06-deployment-guide.md)
+- [Visual Walkthrough & Screenshot Gallery](docs/07-visual-walkthrough.md)
