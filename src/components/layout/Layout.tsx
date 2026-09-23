@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Sidebar, PageId } from './Sidebar';
 import { Topbar } from './Topbar';
+import { AIChatbot } from '../chat/AIChatbot';
 
 interface LayoutProps {
   activePage: PageId;
@@ -36,6 +37,9 @@ export const Layout: React.FC<LayoutProps> = ({ activePage, onNavigate, children
         <footer className="py-4 px-6 border-t border-slate-200/80 bg-white text-center text-xs text-slate-400">
           UniOps-AI • Enterprise University AI Operations Platform Prototype • FERPA & DPDP Compliant Architecture
         </footer>
+
+        {/* Global Floating AI Assistant Widget */}
+        {activePage !== 'dashboard' && <AIChatbot embedded={false} />}
       </div>
     </div>
   );

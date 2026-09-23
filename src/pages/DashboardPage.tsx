@@ -3,6 +3,7 @@ import { useCases } from '../context/CaseContext';
 import { MetricCard } from '../components/common/MetricCard';
 import { DepartmentCard } from '../components/common/DepartmentCard';
 import { CaseTable } from '../components/common/CaseTable';
+import { AIChatbot } from '../components/chat/AIChatbot';
 import { PageId } from '../components/layout/Sidebar';
 import {
   Inbox,
@@ -18,7 +19,7 @@ import {
   ArrowRight,
   ShieldCheck,
   Zap,
-  Users
+  Bot
 } from 'lucide-react';
 import { Department } from '../types';
 
@@ -50,9 +51,9 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onNavigate, onSele
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-brand-500/20 text-brand-300 text-xs font-semibold mb-2 border border-brand-400/30">
               <Sparkles className="w-3.5 h-3.5" /> Autonomous Campus Operations Engine
             </div>
-            <h2 className="text-xl sm:text-2xl font-bold tracking-tight">University AI Request & Case Operations</h2>
+            <h2 className="text-xl sm:text-2xl font-bold tracking-tight">University AI Request & Operations Hub</h2>
             <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
-              Real-time classification, Human-in-the-Loop review, and automated resolution dispatch across 11 university departments.
+              Ask questions via the live AI Chatbot below, submit cases, and manage Human-in-the-Loop reviews across 11 university departments.
             </p>
           </div>
 
@@ -71,6 +72,23 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onNavigate, onSele
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Embedded Live Interactive AI Chatbot Section on Dashboard */}
+      <div>
+        <div className="flex items-center justify-between mb-3">
+          <div>
+            <h3 className="font-bold text-slate-900 text-base flex items-center gap-2">
+              <Bot className="w-5 h-5 text-brand-600" />
+              University AI Operations Assistant (Live Chatbot)
+            </h3>
+            <p className="text-xs text-slate-500">
+              Ask anything about admissions, fees, exam timetables, revaluations, scholarships, or complaints in natural language.
+            </p>
+          </div>
+        </div>
+
+        <AIChatbot embedded={true} />
       </div>
 
       {/* Metric Cards Grid */}
